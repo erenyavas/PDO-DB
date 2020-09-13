@@ -65,10 +65,16 @@ class Database{
 
 
 
-	public function delete($tablename,$y,$gelen)
+	public function delete($tablename,$where,$wherevalue)
 	{
-		$query = $this->db->prepare('DELETE FROM adminlog WHERE ' . $y . '= :param');
-		$delete = $query->execute(array('param' => $gelen ));
+		$query = $this->db->prepare("DELETE FROM $tablename WHERE $where = $wherevalue");
+		$delete = $query->execute();
+		if($delete){
+			return true;
+		}
+		else{
+			return false;
+		}
 	}
 
 
