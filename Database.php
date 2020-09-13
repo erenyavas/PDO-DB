@@ -94,6 +94,16 @@ class Database{
 			return false;
 		}
 	}
+	
+	
+	public function count($tablename)
+	{
+		$query = $this->db->prepare("SELECT COUNT(*) FROM $tablename");
+		$query->execute();
+		$say = $query->fetchColumn();
+		return $say;
+	}
+
 
 
 	
