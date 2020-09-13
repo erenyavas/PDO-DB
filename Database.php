@@ -102,11 +102,7 @@ class Database{
 
 
 }
-$data = [
-			'admin_name' => 'root',
-			'admin_pass' => '1234',
-			'admin_id' =>1
-		];
+
 
 
 
