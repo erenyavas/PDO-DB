@@ -67,7 +67,7 @@ class Database{
 
 	public function delete($tablename,$y,$gelen)
 	{
-		$query = $this->db->prepare('DELETE FROM adminlog WHERE ' . $y . '= :param');
+		$query = $this->db->prepare('DELETE FROM $tablename WHERE ' . $y . '= :param');
 		$delete = $query->execute(array('param' => $gelen ));
 	}
 
